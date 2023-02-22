@@ -91,6 +91,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.6.5"
+  intl_phone_field:
+    dependency: "direct main"
+    description:
+      name: intl_phone_field
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.1.0"
   lints:
     dependency: transitive
     description:
@@ -131,6 +138,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.2"
+  pin_code_fields:
+    dependency: "direct main"
+    description:
+      name: pin_code_fields
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "7.4.0"
   sky_engine:
     dependency: transitive
     description: flutter
