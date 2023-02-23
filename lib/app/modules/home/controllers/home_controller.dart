@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:otp_auth/app/routes/app_pages.dart';
@@ -27,7 +28,14 @@ class HomeController extends GetxController {
     }
   }
 
-  void onSubmit() {
+  void onSubmit() async {
+    await FirebaseAuth.instance.verifyPhoneNumber(
+  phoneNumber: phoneNumberTextController.text,
+  verificationCompleted: (PhoneAuthCredential credential) {},
+  verificationFailed: (FirebaseAuthException e) {},
+  codeSent: (String verificationId, int? resendToken) {},
+  codeAutoRetrievalTimeout: (String verificationId) {},
+);
     Get.toNamed(Routes.OTP_VERIFY);
   }
 }
