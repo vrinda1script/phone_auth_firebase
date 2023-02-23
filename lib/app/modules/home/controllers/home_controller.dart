@@ -29,13 +29,19 @@ class HomeController extends GetxController {
   }
 
   void onSubmit() async {
+    Get.toNamed(
+      Routes.OTP_VERIFY,
+    );
+    debugPrint(phoneNumberTextController.text);
     await FirebaseAuth.instance.verifyPhoneNumber(
-  phoneNumber: phoneNumberTextController.text,
-  verificationCompleted: (PhoneAuthCredential credential) {},
-  verificationFailed: (FirebaseAuthException e) {},
-  codeSent: (String verificationId, int? resendToken) {},
-  codeAutoRetrievalTimeout: (String verificationId) {},
-);
-    Get.toNamed(Routes.OTP_VERIFY);
+      phoneNumber: phoneNumberTextController.text,
+      verificationCompleted: (PhoneAuthCredential credential) {},
+      verificationFailed: (FirebaseAuthException e) {},
+      codeSent: (String verificationId, int? resendToken) {
+        Get.toNamed(Routes.OTP_VERIFY, arguments: verificationId);
+      },
+      codeAutoRetrievalTimeout: (String verificationId) {},
+    );
+    // Get.toNamed(Routes.OTP_VERIFY);
   }
 }

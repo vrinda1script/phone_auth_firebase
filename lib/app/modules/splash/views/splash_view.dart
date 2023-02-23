@@ -8,15 +8,28 @@ class SplashView extends GetView<SplashController> {
   const SplashView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('SplashView'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Text(
-          'SplashView is working',
-          style: TextStyle(fontSize: 20),
+    return SafeArea(
+      child: Scaffold(
+        body: Container(
+          height: Get.height,
+          width: Get.width,
+          decoration: const BoxDecoration(),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CircleAvatar(
+                radius: 110,
+                backgroundColor: Colors.orange,
+                child: FlutterLogo(
+                  size: Get.height * .2,
+                ),
+              ),
+              Text(
+                'WELCOME',
+                style: Get.textTheme.headline2,
+              )
+            ],
+          ),
         ),
       ),
     );

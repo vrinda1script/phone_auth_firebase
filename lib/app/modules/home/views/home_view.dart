@@ -23,7 +23,7 @@ class HomeView extends GetView<HomeController> {
               children: [
                 Center(
                     child: CircleAvatar(
-                  radius: 50,
+                  radius: 55,
                   backgroundColor: Colors.orange,
                   child: FlutterLogo(
                     size: Get.height * .1,
@@ -64,7 +64,7 @@ class HomeView extends GetView<HomeController> {
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.orange),
                     child: Text(
-                      'Submit',
+                      'Send OTP',
                       style: Get.textTheme.headline6!
                           .copyWith(color: Colors.white),
                     ),

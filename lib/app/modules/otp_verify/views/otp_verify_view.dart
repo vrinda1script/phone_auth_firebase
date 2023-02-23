@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -15,8 +16,11 @@ class OtpVerifyView extends GetView<OtpVerifyController> {
           centerTitle: true,
         ),
         body: ListView(
-          padding: EdgeInsets.all(15),
+          padding: const EdgeInsets.all(15),
           children: [
+            const SizedBox(
+              height: 200,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -26,9 +30,12 @@ class OtpVerifyView extends GetView<OtpVerifyController> {
                 ),
               ],
             ),
+            const SizedBox(
+              height: 50,
+            ),
             Center(
               child: PinCodeTextField(
-                length: 4,
+                length: 6,
                 obscureText: false,
                 pinTheme: PinTheme(
                     errorBorderColor: Colors.red,
@@ -56,7 +63,35 @@ class OtpVerifyView extends GetView<OtpVerifyController> {
                 },
                 autoDisposeControllers: false,
               ),
-            )
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            SizedBox(
+              width: Get.width,
+              child: ElevatedButton(
+                onPressed: () {
+                  controller.onVerifyOTP();
+                },
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.orange),
+                child: Text(
+                  'Verify Otp',
+                  style: Get.textTheme.headline6!.copyWith(color: Colors.white),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Edit your Phone Number',
+                  style: Get.textTheme.headline6,
+                ),
+              ],
+            ),
           ],
         ));
   }
