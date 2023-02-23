@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:otp_auth/app/routes/app_pages.dart';
 
 class OtpVerifyController extends GetxController {
   late TextEditingController pinCodeTextController;
@@ -27,6 +28,7 @@ class OtpVerifyController extends GetxController {
 
       // Sign the user in (or link) with the credential
       await auth.signInWithCredential(credential);
+      Get.toNamed(Routes.HOME);
     } catch (e) {
       Get.snackbar('error', 'Invalid Info');
     }
