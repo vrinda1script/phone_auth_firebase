@@ -40,7 +40,7 @@ class PhoneNumberLoginView extends GetView<PhoneNumberLoginController> {
                   padding: const EdgeInsets.only(top: 15, bottom: 15),
                   child: IntlPhoneField(
                     key: controller.phoneFormKey,
-                    controller: controller.phoneNumberTextController,
+                    //controller: controller.phoneNumberTextController,
                     // validator: (value) =>
                     //     GetUtils.isBlank(value)! ? 'invalid value' : '',
                     decoration: const InputDecoration(
@@ -51,6 +51,8 @@ class PhoneNumberLoginView extends GetView<PhoneNumberLoginController> {
                     ),
                     initialCountryCode: 'IN',
                     onChanged: (phone) {
+                      controller.onSubmitNumber(phone.completeNumber);
+                      
                       print(phone.completeNumber);
                     },
                   ),
