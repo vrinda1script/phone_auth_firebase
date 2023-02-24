@@ -39,10 +39,11 @@ class OtpVerifyView extends GetView<OtpVerifyController> {
                   length: 6,
                   obscureText: false,
                   pinTheme: PinTheme(
+                    //borderRadius:BorderRadius.all(Radius.circular(10)),
                       errorBorderColor: Colors.red,
                       shape: PinCodeFieldShape.box,
                       borderWidth: 2,
-                      borderRadius: BorderRadius.circular(5),
+                      borderRadius: BorderRadius.circular(8),
                       selectedColor: Colors.white,
                       inactiveFillColor: Colors.grey,
                       fieldHeight: 50,

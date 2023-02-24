@@ -2,12 +2,14 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:otp_auth/app/utils/network.dart';
 
 import '../../../routes/app_pages.dart';
 
 class PhoneNumberLoginController extends GetxController {
   late TextEditingController phoneNumberTextController;
   final phoneFormKey = GlobalKey<FormState>();
+   final _networkCheck = Get.find<NetworkConnectivity>();
 
   //late Map _source = {ConnectivityResult.none: false};
   //final NetworkConnectivity _networkConnectivity = NetworkConnectivity.instance;
